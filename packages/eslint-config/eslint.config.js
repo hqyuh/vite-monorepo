@@ -6,14 +6,11 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import eslintPluginSonarjs from 'eslint-plugin-sonarjs';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
-import { resolve } from 'node:path';
-import { dirname } from 'path';
 import tseslint from 'typescript-eslint';
 import { fileURLToPath } from 'url';
 
 // get address eslint.config.js file
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 export default tseslint.config(
   { ignores: ['dist', 'vite.config.ts', '**/*.config.js', 'packages/ui/src/components'] },
@@ -32,9 +29,7 @@ export default tseslint.config(
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        sourceType: 'module',
-        tsconfigRootDir: process.cwd(),
-        project: resolve(process.cwd(), 'tsconfig.eslint.json')
+        project: ['./tsconfig.eslint.json', './packages/*/tsconfig.json']
       }
     },
     rules: {

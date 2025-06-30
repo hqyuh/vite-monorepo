@@ -1,5 +1,6 @@
-import { Banner, H1 } from '@mono/ui';
 import { add } from '@mono/utils';
+import Banner from '@ui/Banner';
+import H1 from '@ui/H1';
 import { Button } from '@ui/components/ui/button';
 
 type TProps = {
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <>
-      <div className='text-5xl'>Teams</div>
+      <div className='flex text-5xl'>Teams</div>
       <Banner instanceName='Teams' />
       <H1 />
       <Button>CC</Button>

@@ -3,6 +3,8 @@ import { Banner, H1 } from '@mono/ui';
 import './App.css';
 
 function App() {
+  console.log('1');
+
   return (
     <>
       <div className='m-6 text-5xl'>Manager</div>
