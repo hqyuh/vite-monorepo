@@ -1,0 +1,40 @@
+{
+  "name": "admin",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "pnpm lint:biome && pnpm lint:tsc",
+    "lint:biome": "pnpm /^lint:biome:.+/",
+    "lint:biome:lint": "biome lint .",
+    "lint:biome:format": "biome format .",
+    "lint:tsc": "tsc --noEmit",
+    "preview": "vite preview",
+    "clean": "rm -rf .turbo"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.7",
+    "@workspace/shared": "workspace:*",
+    "@workspace/ui": "workspace:*",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.1.0",
+    "@workspace/typescript-config": "workspace:*",
+    "globals": "^16.4.0",
+    "typescript": "~5.9.3",
+    "vite": "npm:rolldown-vite@latest",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:rolldown-vite@latest"
+    }
+  }
+}

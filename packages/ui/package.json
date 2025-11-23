@@ -1,56 +1,46 @@
 {
-  "name": "@mono/ui",
+  "name": "@workspace/ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "src/index.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsc -b && vite build && tailwindcss -i ./src/styles.css -o ./dist/styles.css",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix \"src/**/*.{ts,tsx}\"",
-    "prettier": "prettier --check \"src/**/(*.tsx|*.ts|*.css|*.scss)\"",
-    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.css|*.scss)\""
-  },
   "exports": {
-    "./styles.css": "./src/styles.css",
-    "./postcss.config": "./postcss.config.cjs",
-    "./tailwind.config": "./tailwind.config.js",
+    "./globals.css": "./src/styles/globals.css",
     "./lib/*": "./src/lib/*.ts",
-    ".": "./src/index.ts"
+    "./utils/*": "./src/lib/utils/*.ts",
+    "./components/*": "./src/components/*.tsx"
+  },
+  "scripts": {
+    "lint": "pnpm lint:biome && pnpm lint:tsc",
+    "lint:biome": "pnpm /^lint:biome:.+/",
+    "lint:biome:lint": "biome lint .",
+    "lint:biome:format": "biome format .",
+    "lint:tsc": "tsc --noEmit",
+    "clean": "rm -rf .turbo"
   },
   "dependencies": {
-    "@mono/typescript-config": "workspace:*",
-    "@radix-ui/react-icons": "^1.3.0",
-    "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "^0.7.0",
+    "@radix-ui/react-avatar": "^1.1.10",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@remixicon/react": "^4.6.0",
+    "@tailwindcss/vite": "^4.0.7",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.453.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "lucide-react": "^0.546.0",
+    "radix-ui": "^1.4.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss": "^4.0.7"
   },
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
-    "@types/node": "^22.7.9",
-    "@types/react": "^18.3.10",
-    "@types/react-dom": "^18.3.0",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react-swc": "^3.5.0",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9.11.1",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.12",
-    "globals": "^15.9.0",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.7.0",
-    "vite": "^5.4.8"
+    "@workspace/typescript-config": "workspace:*",
+    "globals": "^15.14.0",
+    "tw-animate-css": "^1.2.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.6",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }

@@ -3,9 +3,8 @@
   "extends": "@workspace/typescript-config/base.app.json",
   "include": ["src"],
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@ui/*": ["./src/*"]
+      "@shared/*": ["./src/*"]
     }
   }
 }

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.1.3/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true,
+    "defaultBranch": "main"
+  },
+  "files": {
+    "includes": [
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.scss",
+      "**/*.css",
+      "**/*.json",
+      "**/*.html",
+      "!**/node_modules",
+      "!biome.json",
+      "!**/dist",
+      "!**/out",
+      "!**/build",
+      "!**/public",
+      "!**/tsconfig.*",
+      "!**/*.gen.*",
+      "!**/gql/*.ts"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 120,
+    "includes": [
+      "**",
+      "!biome.json",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/out",
+      "!**/build",
+      "!**/public",
+      "!**/*.gen.*",
+      "!**/gql/*.ts"
+    ]
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "off"
+      }
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "suspicious": {
+        "noEmptyInterface": "off",
+        "noArrayIndexKey": "warn",
+        "noConsole": { "level": "warn", "options": { "allow": ["log"] } }
+      },
+      "recommended": true,
+      "correctness": {
+        "noUnusedVariables": "warn",
+        "useExhaustiveDependencies": "warn"
+      },
+      "style": {
+        "noNonNullAssertion": "off",
+        "useImportType": "warn",
+        "noParameterAssign": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error"
+      },
+      "performance": {
+        "noDelete": "off"
+      }
+    }
+  }
+}

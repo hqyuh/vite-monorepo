@@ -1,0 +1,28 @@
+{
+  "name": "@workspace/shared",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./stores": "./src/stores/index.ts"
+  },
+  "scripts": {
+    "lint": "pnpm lint:biome && pnpm lint:tsc",
+    "lint:biome": "pnpm /^lint:biome:.+/",
+    "lint:biome:lint": "biome lint .",
+    "lint:biome:format": "biome format .",
+    "lint:tsc": "tsc --noEmit",
+    "clean": "rm -rf .turbo",
+    "codegen": "graphql-codegen --config ./codegen.ts"
+  },
+  "dependencies": {
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@workspace/typescript-config": "workspace:*",
+    "typescript": "~5.7.2",
+    "vite": "^6.3.5",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
