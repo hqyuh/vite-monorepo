@@ -18,19 +18,6 @@ This repository contains the source code of monorepo.
 
 To set up the project locally, follow these steps:
 
-1. Clone the repository:
-    ```bash
-    git clone
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd turborepo-vite-react-ts-tailwindcss4-shadcn
-    ```
-3. Install the dependencies:
-    ```bash
-    pnpm install
-    ```
-
 ## Develpment
 
 Just run all of the applications via this command:
