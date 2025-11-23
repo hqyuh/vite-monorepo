@@ -20,7 +20,7 @@ To set up the project locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone git@github.com:bodasooqa/turborepo-vite-react-ts-tailwindcss4-shadcn.git
+    git clone
     ```
 2. Navigate to the project directory:
     ```bash
